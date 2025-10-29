@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic Funding Blueprint: MarinaChain</title>
+    <!-- Link to the required font for a modern/sleek look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Setup */
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8fafc; /* Very light, modern background */
+        }
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            background: #fff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Header & Title Styling (REVISED for Centered Logo) */
+        .header-section {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #0f172a; /* Dark Corporate Blue */
+            margin-bottom: 5px;
+        }
+        h1 {
+            color: #0f172a; /* Dark Corporate Blue */
+            font-size: 32px;
+            margin: 10px 0 0 0; /* Adjusted margin to fit under title */
+            line-height: 1.1;
+            font-weight: 700;
+        }
+        .subtitle {
+            font-size: 18px;
+            color: #555;
+            margin-top: 15px;
+            margin-bottom: 25px;
+            font-style: italic;
+            font-weight: 400;
+        }
+        
+        /* Logo Styles (Centered with text) */
+        .company-logo-block {
+            display: inline-block; /* Allows centering of the whole block */
+            margin: 0 auto 10px auto; /* Centered above title */
+            text-align: center;
+        }
+        .company-logo-block .icon {
+            width: 50px;
+            height: 50px;
+            background: #0f172a; 
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(15, 23, 42, 0.15);
+            margin: 0 auto; /* Center the icon within its block */
+        }
+        .company-logo-block .icon::before {
+            content: '';
+            position: absolute;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 3px solid rgba(14, 165, 233, 0.6); 
+        }
+        .company-logo-block .icon::after {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #0ea5e9; /* Primary Blue */
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(14, 165, 233, 0.5);
+        }
+        .company-logo-block .text {
+            font-weight: 700;
+            font-size: 16px; /* Slightly smaller than title for hierarchy */
+            letter-spacing: -0.5px;
+            color: #0f172a; 
+            margin-top: 5px; /* Space between icon and text */
+            display: block;
+        }
+        .company-logo-block .text span {
+            color: #0ea5e9; /* Primary Blue accent */
+        }
+
+        /* Section Headers */
+        h2 {
+            color: #0f172a; /* Dark Corporate Blue */
+            font-size: 24px;
+            margin-top: 35px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 8px;
+            font-weight: 600;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            table-layout: fixed;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border: 1px solid #eee;
+            vertical-align: top;
+            font-size: 14px;
+        }
+        th {
+            background-color: #0f172a;
+            color: #fff;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .snapshot-table td:first-child {
+            font-weight: 600;
+            width: 25%;
+            background-color: #eaf1fa;
+            color: #0f172a;
+        }
+
+        /* Concept Card Simplification */
+        .simplified-concept-card {
+            border: 1px solid #0ea5e9; 
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 6px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        .simplified-concept-card:hover {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+        .simplified-concept-card h3 {
+            color: #0f172a;
+            margin-top: 0;
+            font-size: 20px;
+            border-bottom: 2px solid #0ea5e9;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        .mapped-to {
+            font-style: italic;
+            color: #777;
+            margin-bottom: 5px; 
+            display: block;
+            font-size: 14px;
+            border-left: 3px solid #ccc;
+            padding-left: 10px;
+        }
+        .estimated-funding {
+            font-size: 14px;
+            font-weight: 700;
+            color: #cc0000;
+            margin-bottom: 15px;
+            display: block;
+            padding-left: 10px;
+        }
+        .simplified-concept-card p {
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+        /* Global strong tag color control */
+        .simplified-concept-card strong {
+            color: #0ea5e9; 
+            font-weight: 600;
+        }
+        /* Specific override for the snapshot table's strong tags */
+        .core-competence-text strong {
+             color: #0f172a;
+             font-weight: 700;
+        }
+
+        /* Grant Amount Emphasis */
+        .grant-amount {
+            font-weight: 700;
+            color: #CC0000;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header-section">
+        <!-- Logo Icon and Text Centered at the top -->
+        <div class="company-logo-block">
+            <div class="icon"></div>
+            <div class="text">Insight<span>Matches</span></div>
+        </div>
+        <h1>Strategic Funding Blueprint: MarinaChain</h1>
+    </div>
+    <p class="subtitle">Targeting High-Impact European Grants for AI-Driven Maritime Decarbonisation, Digitalisation, and Resilient Supply Chains.</p>
+
+    <!-- I. Opportunity Snapshot - Updated Title -->
+    <h2>I. Client & Opportunity Snapshot</h2>
+    <table class="snapshot-table">
+        <tr>
+            <td>Client Company Name:</td>
+            <td><strong>MarinaChain</strong></td>
+        </tr>
+        <tr>
+            <td>Industry Focus:</td>
+            <td>AI-Driven Maritime Decarbonisation and Digitalisation</td>
+        </tr>
+        <tr>
+            <td>Core Competence:</td>
+            <td class="core-competence-text">Providing <strong>AI-powered emission compliance, carbon accounting, and digitalisation solutions</strong> for the shipping and logistics industry. The core technology leverages <strong>AI analytics (ParseAI)</strong> to provide full-lifecycle insights and support the transition to a net-zero maritime sector.</td>
+        </tr>
+    </table>
+
+    <!-- II. Consolidated Opportunity Pipeline (Horizon Europe) -->
+    <h2>II. Consolidated Opportunity Pipeline (Horizon Europe)</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Project Title</th>
+                <th>Call ID (Type)</th>
+                <th>Est. Grant (€M)</th>
+                <th>Likely Partners</th>
+                <th>Likely Duration (Est.)</th>
+                <th>Key Alignment Focus</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>AI-Driven Industrial Decarbonisation</td>
+                <td>HORIZON-CL4-2026-CLEAN-INDUSTRY-01-01 (IA)</td>
+                <td><span class="grant-amount">€6M - €10M</span></td>
+                <td>Manufacturing Industry, Robotics & Automation Experts, European Aerospace/Automotive OEMs.</td>
+                <td>48 Months</td>
+                <td>Decarbonisation of heavy industry (shipping, ports) using digital process control and AI.</td>
+            </tr>
+            <tr>
+                <td>Predictive Analytics for Supply Chain Resilience</td>
+                <td>HORIZON-CL4-2026-RESILIENCE-01-01 (RIA)</td>
+                <td><span class="grant-amount">€4M - €6M</span></td>
+                <td>7 - 10 Partners (Est.), Logistics Firms, Academic/RTOs, Risk Management Software Providers.</td>
+                <td>36 Months</td>
+                <td>Developing supply chain monitoring tools and predictive analytics to anticipate disruptions.</td>
+            </tr>
+            <tr>
+                <td>Green Ports & Zero-Emission Logistics</td>
+                <td>HORIZON-CL5-2026-D6-01-01 (IA)</td>
+                <td><span class="grant-amount">€5M - €8M</span></td>
+                <td>Port Authorities, Zero-Emission Technology Providers (e.g., Shore Power), Urban Logistics Operators.</td>
+                <td>48 Months</td>
+                <td>Demonstrating zero-emission solutions for urban logistics hubs, including ports.</td>
+            </tr>
+            <tr>
+                <td>Trustworthy AI for Industrial Data</td>
+                <td>HORIZON-CL4-2026-DIGITAL-EMERGING-01-01 (RIA)</td>
+                <td><span class="grant-amount">€4M - €6M</span></td>
+                <td>AI/ML Research Institutes, European Data Sovereignty Experts, Industrial End-users (e.g., Shipping Lines).</td>
+                <td>36 Months</td>
+                <td>Development of safe, transparent, and fair AI for industrial use cases (e.g., ParseAI).</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- III. Strategic Project Concepts: Applying MarinaChain's Technology -->
+    <h2>III. Strategic Project Concepts: Applying MarinaChain's Technology</h2>
+    <p>This section illustrates how MarinaChain’s core technology (MarinaNet, ParseAI, AI-driven analytics) translates into fundable project concepts for the top 2 opportunities (MarinaChain as key partner).</p>
+
+    <!-- Concept 1 - AI-GREEN PORT -->
+    <div class="simplified-concept-card">
+        <h3>1. AI-GREEN PORT: AI-Driven Decarbonisation for Energy-Intensive Ports</h3>
+        <span class="mapped-to">Mapped to: HORIZON-CL4-2026-CLEAN-INDUSTRY-01-01 (Innovation Action) - Decarbonisation of Energy-Intensive Industries</span>
+        <span class="estimated-funding">MarinaChain Estimated Funding Share: <strong>€1.5M - €3.0M</strong></span>
+        
+        <p><strong>Concept Essence:</strong> To deploy and validate MarinaChain's **AI platform** across three major European ports and their industrial ecosystems. The project will automate and optimize **carbon lifecycle accounting** and energy use for both visiting vessels and shoreside industrial operations, creating a replicable "Green Port" model.</p>
+
+        <p><strong>MarinaChain's Partner Contribution:</strong> MarinaChain will lead the digitalization work package, focusing on integrating their AI-driven emission compliance tools to achieve **full transparency** of GHG emissions across the port ecosystem. This input is critical for establishing the **digital backbone** for the new Green Port model and providing auditable data for regulatory compliance.</p>
+        
+        <p><strong>Strategic Rationale:</strong> Directly addresses the call's aim to decarbonize heavy industry using digital tools. This project positions MarinaChain as a key enabler for the green transition of Europe's most critical infrastructure, showcasing a powerful **B2G (Business-to-Government/Port Authority)** and **B2B** solution.</p>
+    </div>
+
+    <!-- Concept 2 - SEA-SENTINEL -->
+    <div class="simplified-concept-card">
+        <h3>2. SEA-SENTINEL: Predictive Analytics for Maritime Supply Chain Resilience</h3>
+        <span class="mapped-to">Mapped to: HORIZON-CL4-2026-RESILIENCE-01-01 (RIA) - Resilient Supply Chain Monitoring & Analytics</span>
+        <span class="estimated-funding">MarinaChain Estimated Funding Share: <strong>€1.0M - €2.0M</strong></span>
+        
+        <p><strong>Concept Essence:</strong> To enhance MarinaChain's data platform with a **predictive analytics module** capable of anticipating and mitigating disruptions in the maritime supply chain. The system will process diverse data sets (shipping data, port congestion, weather, geopolitical risk) to provide **actionable resilience intelligence**.</p>
+
+        <p><strong>MarinaChain's Partner Contribution:</strong> MarinaChain will provide the core **data processing and AI modelling capacity**. The focus will be on developing and validating the proprietary **ParseAI engine** to predict key risk indicators (KRIs) that impact supply chain flow and cost efficiency, ensuring the system is transparent and reliable for complex decision-making.</p>
+        
+        <p><strong>Strategic Rationale:</strong> Aligns perfectly with the call's focus on strengthening EU strategic autonomy by making critical supply chains more resilient. It expands MarinaChain's value proposition from emissions compliance to crucial **operational and economic resilience**, a high-value service for logistics firms and governments.</p>
+    </div>
+
+</div>
+
+</body>
+</html>
